@@ -12,6 +12,11 @@ export default class DbAddAccount implements AddAccount {
   async add(account: AddAccountModel): Promise<AccountModel> {
     await this.encrypter.encrypt(account.password);
     // eslint-disable-next-line no-promise-executor-return
-    return new Promise((resolve) => resolve(null));
+    return new Promise((resolve) => resolve({
+      id: 'string',
+      name: 'string',
+      email: 'string',
+      password: 'string',
+    }));
   }
 }
